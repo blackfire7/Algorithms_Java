@@ -1,5 +1,6 @@
 # Algorithms_Java
-Algorithgs solved in java
+Algorithms written in java
 
-Two Sum\
-Last Stone Weight
+Last Stone Weight\
+Palindrome\
+Two Sum
