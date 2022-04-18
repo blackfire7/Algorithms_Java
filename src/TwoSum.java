@@ -2,6 +2,28 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+public class TwoSum {
+    public static void main(String[] args) {
+        long startTime = System.nanoTime();
+
+        int[] nums = {2, 7, 9, 11};
+        int target = 9;
+        System.out.println(Arrays.toString(getValue(nums, target)));
+
+        System.out.println("Took "+(System.nanoTime() - startTime) + " ns");
+    }
+
+    public static int[] getValue(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(target - nums[i]))
+                return new int[] {map.get(target - nums[i]), i};
+            map.put(nums[i], i);
+        }
+        return new int[]{};
+    }
+}
+
 /**
  * Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
  *
@@ -39,25 +61,3 @@ import java.util.Map;
  * -109 <= target <= 109
  * Only one valid answer exists.
  */
-
-public class TwoSum {
-    public static void main(String[] args) {
-        long startTime = System.nanoTime();
-
-        int[] nums = {2, 7, 9, 11};
-        int target = 9;
-        System.out.println(Arrays.toString(getValue(nums, target)));
-
-        System.out.println("Took "+(System.nanoTime() - startTime) + " ns");
-    }
-
-    public static int[] getValue(int[] nums, int target) {
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            if (map.containsKey(target - nums[i]))
-                return new int[] {map.get(target - nums[i]), i};
-            map.put(nums[i], i);
-        }
-        return new int[]{};
-    }
-}

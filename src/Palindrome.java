@@ -1,3 +1,21 @@
+public class Palindrome {
+
+    public static void main(String[] args) {
+        System.out.println(isPalindrome(12321));
+    }
+
+    public static boolean isPalindrome(int number) {
+        if (number < 0 || (number != 0 && number % 10 == 0))
+            return false;
+        int res = 0;
+        while (number > res) {
+            res = res * 10 + number % 10;
+            number = number / 10;
+        }
+        return (number == res || number == res / 10);
+    }
+}
+
 /**
  * Given an integer x, return true if x is palindrome integer.
  *
@@ -33,21 +51,3 @@
  *
  * -231 <= x <= 231 - 1
  */
-
-public class Palindrome {
-
-    public static void main(String[] args) {
-        System.out.println(isPalindrome(12321));
-    }
-
-    public static boolean isPalindrome(int number) {
-        if (number < 0 || (number != 0 && number % 10 == 0))
-            return false;
-        int res = 0;
-        while (number > res) {
-            res = res * 10 + number % 10;
-            number = number / 10;
-        }
-        return (number == res || number == res / 10);
-    }
-}
