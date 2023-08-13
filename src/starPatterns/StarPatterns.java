@@ -122,5 +122,75 @@ public class StarPatterns {
             System.out.println();
         }
 
+        System.out.println();
+        System.out.println();
+
+        /** PATTERN - 9 */
+        for (int i = 1; i <= rows; i++) {
+            for (int j = rows - 1; j >= i; j--) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = rows - 1; j >= i; j--) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+        System.out.println();
+
+        /** PATTERN - 10 */
+        for (int i = 1; i <= rows; i++) {
+            for (int j = rows - 1; j >= i; j--) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= rows; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+        System.out.println();
+
+        /** PATTERN - 11 */
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= rows; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+            for (int j = 1; j <= i; j++) {
+                System.out.print(" ");
+            }
+        }
+
+        System.out.println();
+        System.out.println();
+
+        /** PATTERN - 12 */
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 0; j <= rows - i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                if (i > 1) System.out.print("*");
+            }
+            if (i > 1) System.out.println();
+        }
+
     }
 }
