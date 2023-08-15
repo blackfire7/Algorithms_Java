@@ -312,6 +312,40 @@ public class StarPatterns {
             System.out.println();
         }
 
+        System.out.println();
+        System.out.println();
+        System.out.println("PATTERN : 18");
+        System.out.println();
+
+        /** PATTERN - 18 */
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j < i; j++){
+                System.out.print(" ");
+            }
+            for (int j = rows; j >= i; j--) {
+                if (i == 1 || j == rows || j == i) System.out.print("*");
+                else System.out.print(" ");
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+        System.out.println();
+        System.out.println("PATTERN : 19");
+        System.out.println();
+
+        /** PATTERN - 19 */
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= rows - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= 2 * rows - 1; j++) {
+                if (j == 1 || i == rows || j == 2 * i - 1) System.out.print("*");
+                else System.out.print(" ");
+            }
+            System.out.println();
+        }
+
 
     }
 }
