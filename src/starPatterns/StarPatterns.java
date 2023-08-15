@@ -345,7 +345,5 @@ public class StarPatterns {
             }
             System.out.println();
         }
-
-
     }
 }
