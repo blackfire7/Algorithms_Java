@@ -2,7 +2,7 @@ package recursion;
 
 public class NCr {
     public static void main(String[] args) {
-        System.out.println(nCr(5, 3));
+        System.out.println(nCr(13, 12));
     }
 
     public static int nCr(int n, int r) {
