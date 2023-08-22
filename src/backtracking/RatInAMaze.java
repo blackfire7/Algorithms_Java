@@ -1,4 +1,4 @@
-package recursion;
+package backtracking;
 
 import java.util.ArrayList;
 
@@ -14,13 +14,6 @@ public class RatInAMaze {
 
         paths = new ArrayList<>();
 
-//        int[][] m = {{1, 0, 0},
-//                {0, 1, 0},
-//                {0, 0, 1}};
-
-//        int[][] m = {{0, 1, 1},
-//                {1, 1, 1},
-//                {1, 1, 1}};
         System.out.println(findPath(m, m.length));
     }
 
