@@ -7,7 +7,5 @@ public class PermutationsOfAnArray {
         * -10 <= nums[i] <= 10
         * All the integers of nums are unique.
         */
-
-
     }
 }
