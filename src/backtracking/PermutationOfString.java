@@ -1,7 +1,9 @@
 package backtracking;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class PermutationOfString {
@@ -19,6 +21,10 @@ public class PermutationOfString {
         int n = str.length();
         List<String> strList = new ArrayList<>();
         permuteHelper(str, strList, 0, n - 1);
+        Set<String> set = new LinkedHashSet<>(strList);
+        strList.clear();
+        strList.addAll(set);
+
         return strList;
     }
 
