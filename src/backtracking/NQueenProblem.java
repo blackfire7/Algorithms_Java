@@ -1,7 +1,6 @@
 package backtracking;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class NQueenProblem {
@@ -10,38 +9,69 @@ public class NQueenProblem {
     }
 
     public static List<List<String>> solveNQueens(int n) {
+        char[][] board = new char[n][n];
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board.length; j++) {
+                board[i][j] = '.';
+            }
+        }
+
         List<List<String>> ans = new ArrayList<>();
-        String[] board = new String[n];
-        Arrays.fill(board, ".".repeat(n));
-        int[] leftrow = new int[n];
-        int[] upperDiagonal = new int[2 * n - 1];
-        int[] lowerDiagonal = new int[2 * n - 1];
-        solve(0, board, ans, leftrow, upperDiagonal, lowerDiagonal, n);
+        queen(board, 0, ans);
         return ans;
     }
 
-    private static void solve(int col, String[] board, List<List<String>> ans, int[] lr, int[] ud, int[] ld, int n) {
-        if (col == n) {
-            ans.add(new ArrayList<>(Arrays.asList(board)));
+    static void queen(char[][] board, int row, List<List<String>> list) {
+
+        if (row == board.length) {
+
+            list.add(construct(board));
             return;
         }
-        for (int row = 0; row < n; row++) {
-            if (lr[row] == 0 && ld[row + col] == 0 && ud[n - 1 + col - row] == 0) {
-                char[] charArray = board[row].toCharArray();
-                charArray[col] = 'Q';
-                board[row] = new String(charArray);
-                lr[row] = 1;
-                ld[row + col] = 1;
-                ud[n - 1 + col - row] = 1;
 
-                solve(col + 1, board, ans, lr, ud, ld, n);
-
-                charArray[col] = '.';
-                board[row] = new String(charArray);
-                lr[row] = 0;
-                ld[row + col] = 0;
-                ud[n - 1 + col - row] = 0;
+        for (int col = 0; col < board.length; col++) {
+            if (isSafe(board, row, col)) {
+                board[row][col] = 'Q';
+                queen(board, row + 1, list);
+                board[row][col] = '.';
             }
         }
+    }
+
+    static List<String> construct(char[][] board) {
+
+        List<String> internal = new ArrayList<>();
+        for (char[] chars : board) {
+            String row = new String(chars);
+            internal.add(row);
+        }
+        return internal;
+    }
+
+    static boolean isSafe(char[][] board, int row, int col) {
+
+        for (int i = 0; i < row; i++) {
+            if (board[i][col] == 'Q') {
+                return false;
+            }
+        }
+
+        int maxLeft = Math.min(row, col);
+
+        for (int i = 1; i <= maxLeft; i++) {
+            if (board[row - i][col - i] == 'Q') {
+                return false;
+            }
+        }
+
+        int maxRight = Math.min(row, board.length - 1 - col);
+
+        for (int i = 1; i <= maxRight; i++) {
+            if (board[row - i][col + i] == 'Q') {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
