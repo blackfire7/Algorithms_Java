@@ -14,6 +14,8 @@ public class SmartKeypadProblem {
         List<String> res = new ArrayList<>();
         if (digits.length() == 0) return res;
         Map<Character, String> hashMap = new HashMap<>();
+        hashMap.put('0', "");
+        hashMap.put('1', "");
         hashMap.put('2', "abc");
         hashMap.put('3', "def");
         hashMap.put('4', "ghi");
