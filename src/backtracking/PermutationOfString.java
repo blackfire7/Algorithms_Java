@@ -9,8 +9,7 @@ import java.util.stream.Collectors;
 public class PermutationOfString {
 
     public static void main(String[] args) {
-//        String str = "ABC";
-        String str = "AAA";
+        String str = "ABC";
         List<String> result = permute(str);
         result = result.stream().sorted().collect(Collectors.toList());
         System.out.println(result);
@@ -29,8 +28,7 @@ public class PermutationOfString {
     }
 
     public static void permuteHelper(String str, List<String> strList, int l, int r) {
-        if (l == r)
-            strList.add(str);
+        if (l == r) strList.add(str);
         else {
             for (int i = l; i <= r; i++) {
                 str = swap(str, l, i);

@@ -24,7 +24,6 @@ public class NQueenProblem {
     static void queen(char[][] board, int row, List<List<String>> list) {
 
         if (row == board.length) {
-
             list.add(construct(board));
             return;
         }
