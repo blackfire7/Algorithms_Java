@@ -1,3 +1,5 @@
+package leetcode;
+
 public class RemoveDuplicate {
     public static void main(String[] arga) {
 
