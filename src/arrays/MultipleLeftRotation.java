@@ -23,7 +23,7 @@ public class MultipleLeftRotation {
         for (int i = 0; i < n; i++) temp[i] = temp[i + n] = a[i];
 
         for (int i = 0; i < m; i++) {
-            int offset = b[i] % n;
+            int offset = b[i] % n; // for Right Rotation -> (n - b[i]) % n;
             for (int j = 0; j < n; j++) ans[i][j] = temp[j + offset];
         }
 
