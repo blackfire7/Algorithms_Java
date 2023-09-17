@@ -6,14 +6,14 @@ public class MaxChunksToMakeSorted1 {
         System.out.println(maxChunks(a));
     }
 
-    public static int maxChunks(int[] a) {
-        if (a.length == 0) return 0;
+    public static int maxChunks(int[] arr) {
+        if (arr.length == 0) return 0;
 
         int chunks = 0;
-        int maxTillNow = a[0];
+        int maxTillNow = arr[0];
 
-        for (int i = 0; i < a.length; i++) {
-            maxTillNow = Math.max(maxTillNow, a[i]);
+        for (int i = 0; i < arr.length; i++) {
+            maxTillNow = Math.max(maxTillNow, arr[i]);
             if (i == maxTillNow) chunks++;
         }
 
