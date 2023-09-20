@@ -28,7 +28,11 @@ public class Basic {
 
         printLinkedList(head);
 
-        head = insertInLinkedLIst(3, 55, head);
+        head = insertInLinkedLIst(3, 5, head);
+
+        printLinkedList(head);
+
+        head = deleteFromLinkedList(3, head);
 
         printLinkedList(head);
     }
@@ -44,13 +48,13 @@ public class Basic {
     }
 
     public static Node<Integer> insertInLinkedLIst(int position, int data, Node<Integer> head) {
-        Node<Integer> temp = head;
         Node<Integer> newNode = new Node<>(data);
-
         if (position == 0) {
             newNode.next = head;
             return newNode;
         }
+
+        Node<Integer> temp = head;
 
         for (int i = 0; i < position - 1; i++) {
             temp = temp.next;
@@ -61,6 +65,22 @@ public class Basic {
 
         return head;
 
+    }
+
+    public static Node<Integer> deleteFromLinkedList(int position, Node<Integer> head) {
+        if (position == 0) {
+            return head.next;
+        }
+
+        Node<Integer> temp = head;
+
+        for (int i = 0; i < position - 1; i++) {
+            temp = temp.next;
+        }
+
+        temp.next = temp.next.next;
+
+        return head;
     }
 
 }
