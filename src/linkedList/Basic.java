@@ -22,18 +22,23 @@ public class Basic {
         Node<Integer> n4 = new Node<>(3);
 
         head.next = n1;
+        n1.prev = head;
+
         n1.next = n2;
+        n2.prev = n1;
+
         n2.next = n3;
+        n3.prev = n2;
+
         n3.next = n4;
+        n4.prev = n3;
 
         printLinkedList(head);
 
         head = insertInLinkedLIst(3, 5, head);
-
         printLinkedList(head);
 
         head = deleteFromLinkedList(3, head);
-
         printLinkedList(head);
     }
 
@@ -49,8 +54,11 @@ public class Basic {
 
     public static Node<Integer> insertInLinkedLIst(int position, int data, Node<Integer> head) {
         Node<Integer> newNode = new Node<>(data);
+
         if (position == 0) {
             newNode.next = head;
+            head.prev = newNode;
+
             return newNode;
         }
 
@@ -61,7 +69,10 @@ public class Basic {
         }
 
         newNode.next = temp.next;
+        temp.next.prev = newNode;
+
         temp.next = newNode;
+        newNode.prev = temp;
 
         return head;
 
