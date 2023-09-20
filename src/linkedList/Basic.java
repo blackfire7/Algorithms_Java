@@ -27,6 +27,10 @@ public class Basic {
         n3.next = n4;
 
         printLinkedList(head);
+
+        head = insertInLinkedLIst(3, 55, head);
+
+        printLinkedList(head);
     }
 
     public static void printLinkedList(Node<Integer> head) {
@@ -36,6 +40,27 @@ public class Basic {
             System.out.print(temp.value + " -> ");
             temp = temp.next;
         }
+        System.out.println();
+    }
+
+    public static Node<Integer> insertInLinkedLIst(int position, int data, Node<Integer> head) {
+        Node<Integer> temp = head;
+        Node<Integer> newNode = new Node<>(data);
+
+        if (position == 0) {
+            newNode.next = head;
+            return newNode;
+        }
+
+        for (int i = 0; i < position - 1; i++) {
+            temp = temp.next;
+        }
+
+        newNode.next = temp.next;
+        temp.next = newNode;
+
+        return head;
+
     }
 
 }
