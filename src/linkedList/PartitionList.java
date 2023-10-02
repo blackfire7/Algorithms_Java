@@ -45,4 +45,36 @@ public class PartitionList {
         lTail.next = null;
         return sHead.next;
     }
+
+    /**
+     * Problem Statement
+     * Given a linked list A and a value B, partition it such that all nodes less than B come before nodes greater than or equal to B.
+     *
+     * You should preserve the original relative order of the nodes in each of the two partitions.
+     *
+     * Example 1:
+     * Input:
+     *
+     * A = [1, 4, 3, 2, 5, 2]
+     * B = 3
+     *
+     * Output:
+     *
+     * [1, 2, 2, 4, 3, 5]
+     *
+     * Example 2:
+     * Input:
+     *
+     * A = [1, 2, 3, 1, 3]
+     * B = 2
+     *
+     * Output:
+     *
+     * [1, 1, 2, 3, 3]
+     *
+     * Constraints:
+     * 1 <= |A| <= 106
+     *
+     * 1 <= A[i], B <= 109
+     * */
 }
