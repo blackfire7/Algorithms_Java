@@ -1,20 +1,22 @@
 package linkedList;
 
-class ListNode {
-    int val;
-    ListNode next;
+class ListNode<E> {
+    E val;
+    ListNode<E> next;
+    ListNode<E> prev;
 
     ListNode() {
-        val = 0;
         next = null;
+        prev = null;
     }
 
-    ListNode(int val) {
-        this.val = val;
-        next = null;
+    ListNode(E value) {
+        this.val = value;
+        this.next = null;
+        this.prev = null;
     }
 
-    ListNode(int val, ListNode next) {
+    ListNode(E val, ListNode next) {
         this.val = val;
         this.next = next;
     }
