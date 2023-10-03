@@ -3,11 +3,11 @@ package linkedList;
 public class ReverseLinkedList {
     public static void main(String[] args) {
         Node<Integer> head = new Node<>(1);
-        Node<Integer> n1 = new Node<>(4);
+        Node<Integer> n1 = new Node<>(2);
         Node<Integer> n2 = new Node<>(3);
-        Node<Integer> n3 = new Node<>(2);
+        Node<Integer> n3 = new Node<>(4);
         Node<Integer> n4 = new Node<>(5);
-        Node<Integer> n5 = new Node<>(2);
+        Node<Integer> n5 = new Node<>(6);
 
         head.next = n1;
         n1.next = n2;
@@ -21,8 +21,19 @@ public class ReverseLinkedList {
     }
 
     public static Node reverseLinkedList(Node head) {
+        if (head == null || head.next == null) return head;
 
+        Node prev = head;
+        Node cur = head.next;
+        head.next = null;
 
-        return head;
+        while (cur != null) {
+            Node next = cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = next;
+        }
+
+        return prev;
     }
 }
