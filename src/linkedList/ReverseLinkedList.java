@@ -15,7 +15,8 @@ public class ReverseLinkedList {
         n3.next = n4;
         n4.next = n5;
 
-        head = reverseLinkedList(head);
+//        head = reverseLinkedList(head);
+        head = reverseLinkedListRecursively(head);
 
         Basic.printLinkedList(head);
     }
@@ -35,6 +36,17 @@ public class ReverseLinkedList {
         }
 
         return prev;
+    }
+
+    public static Node reverseLinkedListRecursively(Node head) {
+        if (head == null || head.next == null) return head;
+
+        Node headOfSubProblem = reverseLinkedListRecursively(head.next);
+
+        head.next.next = head;
+        head.next = null;
+
+        return headOfSubProblem;
     }
 
     /**
