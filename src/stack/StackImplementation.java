@@ -10,6 +10,8 @@ public class StackImplementation {
         stack.push(4);
 
         stack.printStack();
+        System.out.println(stack.peek());
+        System.out.println(stack.pop());
         System.out.println(stack.pop());
         stack.printStack();
     }
