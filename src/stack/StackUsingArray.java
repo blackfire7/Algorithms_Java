@@ -34,8 +34,9 @@ public class StackUsingArray {
             System.out.println("Stack is empty!");
             return -1;
         }
-
-        return a[top--];
+        int temp = a[top];
+        top--;
+        return temp;
     }
 
     public int peek() {
